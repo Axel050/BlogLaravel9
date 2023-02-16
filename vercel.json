@@ -1,7 +1,7 @@
 {
     "version": 2,
     "functions": {
-        "api/index.php": { "runtime": "vercel-nodejs14.x" }        
+        "api/index.php": { "runtime": "vercel-nodejs12.x" }        
     },
     "routes": [{
         "src": "/(.*)",
