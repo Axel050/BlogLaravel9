@@ -1,7 +1,7 @@
 <x-app-layout>
 
   <h1>inde clean </h1>
-
+{{-- 
 <div class="mx-auto  w-full px-8 sm:px-6  bg-red-500 py-8">
 
 
@@ -9,12 +9,12 @@
     @foreach ($posts as $post)
 
      
-     <article class="w-full h-80 bg-cover bg-center rounded-md shadow-ls @if($loop->first)md:col-span-2  @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg @endif)">
+     <article class="w-full h-80 bg-cover bg-center rounded-md shadow-ls @if($loop->first)md:col-span-2  @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg @endif)"> --}}
        
 
       {{-- <h2 class="bg-red-100">{{$post->image->url}} :::::: {{Storage::url($post->image->url)}}</h2> --}}
 
-       <div class="w-full h-full px-8 flex flex-col justify-center">
+       {{-- <div class="w-full h-full px-8 flex flex-col justify-center">
       
       <div>
         @foreach ($post->tags as $tag)
@@ -34,5 +34,5 @@
 
  <div class="mt-4">{{$posts->links( )}}</div>
 
-</div>  
+</div>   --}}
 </x-app-layout>
