@@ -14,7 +14,7 @@
 
 
 
-      @include("admin.posts.partials.form") ;
+      @include("admin.posts.partials.form") 
 
         {!! Form::submit("Crear post", ["class" => "btn btn-primary "]) !!}
 

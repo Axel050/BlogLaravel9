@@ -1,14 +1,14 @@
 <x-app-layout>
 
-<div class="container bg-red-500 py-8 ">
+<div class="mx-auto  w-full px-8 sm:px-6  bg-red-500 py-8">
 
 
-  <div class="grid  grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="w-4/5  grid  grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6">
     @foreach ($posts as $post)
 
-     <article class="w-full h-80 bg-cover bg-center @if($loop->first)md:col-span-2  @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg @endif)">
+     <article class="w-full h-80 bg-cover bg-center rounded-md shadow-ls @if($loop->first)md:col-span-2  @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg @endif)">
       
-      
+      {{-- <h2 class="bg-red-100">{{$post->image->url}} :::::: {{Storage::url($post->image->url)}}</h2> --}}
       <div class="w-full h-full px-8 flex flex-col justify-center">
           {{-- tagsss --}}
       <div>
@@ -18,7 +18,7 @@
         @endforeach
       </div>
       {{-- Title --}}
-      <h1 class= "text-4xl text-white leading-9 font-bold">
+      <h1 class= "text-4xl text-white leading-9 font-bold ">
         <a href="{{route('posts.show', $post)}}">{{$post->name}}</a>
         </h1>
       </div>      

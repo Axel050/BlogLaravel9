@@ -8,7 +8,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -30,27 +30,33 @@ class PostController extends Controller
 
     public function create()
     {
-
+      
       $categories = Category::pluck("name","id");
       $tags = Tag::all();
 
         return view("admin.posts.create", compact("categories", "tags"));
     }
 
+
+
     public function store(PostRequest $request)
     {
       
-
       $post = Post::create($request->all());
 
       if($request->file("file")){
 
-       $url =  Storage::disk("public")->put("posts", $request->file("file"));
+      //  $url =  Storage::disk("public")->put("posts", $request->file("file"));
+
+      //  $url =  Storage::put("posts", $request->file("file"));
+      return  $url =  Storage::put("poasts", $request->file("file"));
+
+        // Storage::disk("public")->deleteDirectory("posts");      
 
        $post->image()->create(["url" => $url]);
       }
       
-
+      
 
       if($request->tags){
         $post->tags()->attach($request->tags);
@@ -94,6 +100,8 @@ class PostController extends Controller
         $post->tags()->sync($request->tags);
        }
 
+      //  Cache::flush();
+
         return redirect()->route("admin.posts.edit",$post)->with("info", "El post se actualizo con éxito");
     }
 
@@ -103,6 +111,7 @@ class PostController extends Controller
        $this->authorize("author",$post);
         $post->delete();
 
+        // Cache::flush();
         return redirect()->route("admin.posts.index")->with("info", "El post se elimino con éxito");
       
     }
