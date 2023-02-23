@@ -3,6 +3,12 @@
   <h1>inde clean </h1>
   {{$ps}}
 
+  <ul>
+        @foreach ($posts as $post)
+          <li>{{$post->name}}</li>
+        
+        @endforeach
+  </ul>
 {{-- <div class="mx-auto  w-full px-8 sm:px-6  bg-red-500 py-8">
 
 
