@@ -9,13 +9,14 @@
         
         @endforeach
   </ul>
-{{-- <div class="mx-auto  w-full px-8 sm:px-6  bg-red-500 py-8">
+ <div class="mx-auto  w-full px-8 sm:px-6  bg-red-500 py-8">
 
 
   <div class="w-4/5  grid  grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6">
     @foreach ($posts as $post)
 
-     <article class="w-full h-80 bg-cover bg-center rounded-md shadow-ls @if($loop->first)md:col-span-2  @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg @endif)"> 
+     {{-- <article class="w-full h-80 bg-cover bg-center rounded-md shadow-ls @if($loop->first)md:col-span-2  @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg @endif)">  --}}
+     <article class="w-full h-80 bg-cover bg-center rounded-md shadow-ls" style="background-image: url( https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg )"> 
        
 
       
@@ -40,5 +41,5 @@
 
  <div class="mt-4">{{$posts->links( )}}</div>
 
-</div>    --}}
+</div>    
 </x-app-layout>
