@@ -71,7 +71,8 @@
   <div class="col">
       <div class="image-wrapper">
         @isset ($post ->image)
-        <img src="{{Storage::url($post->image->url)}}" id="picture">
+        {{-- <img src="{{Storage::url($post->image->url)}}" id="picture"> --}}
+        <img src="{{Storage::disk("public")->url($post->image->url)}}" id="picture">
         @else 
         <img src="https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg" id="picture">
         @endisset
