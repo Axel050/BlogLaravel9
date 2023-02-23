@@ -50,7 +50,7 @@ class PostController extends Controller
       //  $url =  Storage::disk("public")->put("posts", $request->file("file"));
 
       //  $url =  Storage::put("posts", $request->file("file"));
-      return  $url =  Storage::put("posts", $request->file("file"));
+        $url =  Storage::put("posts", $request->file("file"));
 
         // Storage::disk("public")->deleteDirectory("posts");      
 
