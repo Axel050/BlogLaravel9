@@ -6,8 +6,8 @@
   <div class="w-4/5  grid  grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6">
     @foreach ($posts as $post)
 
-     {{-- <article class="w-full h-80 bg-cover bg-center rounded-md shadow-ls @if($loop->first)md:col-span-2  @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg @endif)">  --}}
-     <article class="w-full h-80 bg-cover bg-center rounded-md shadow-ls" style="background-image: url( https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg )"> 
+     <article class="w-full h-80 bg-cover bg-center rounded-md shadow-ls @if($loop->first)md:col-span-2  @endif" style="background-image: url(@if($post->image) {{Storage::disk("public"->)url($post->image->url)}} @else https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg @endif)"> 
+     {{-- <article class="w-full h-80 bg-cover bg-center rounded-md shadow-ls" style="background-image: url( https://cdn.pixabay.com/photo/2016/07/22/14/12/bike-1534902_640.jpg )">  --}}
        
 
       
