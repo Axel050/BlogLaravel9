@@ -3,9 +3,10 @@
     <input wire:model="search" type="text" placeholder="Ingrese el nombre de un post" class="form-control">
   </div>
 
+
+
 @if ($posts->count())
     
-
   <div class="card-body">
       <table class="table table-striped">
         <thead>
