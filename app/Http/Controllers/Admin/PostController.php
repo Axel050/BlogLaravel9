@@ -47,12 +47,12 @@ class PostController extends Controller
 
       if($request->file("file")){
 
-      //  $url =  Storage::disk("public")->put("posts", $request->file("file"));
+       $url =  Storage::disk("public")->put("posts", $request->file("file"));
 
       //  $url =  Storage::put("posts", $request->file("file"));
-        $url =  Storage::put("posts", $request->file("file"));
+        // $url =  Storage::put("posts", $request->file("file"));
 
-        // Storage::disk("public")->deleteDirectory("posts");      
+
 
        $post->image()->create(["url" => $url]);
       }
